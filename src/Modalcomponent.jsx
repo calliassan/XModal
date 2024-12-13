@@ -5,7 +5,7 @@ export function ModalComponent({ closemodal }) {
     username: "",
     email: "",
     phone: "",
-    date: "",
+    dob: "",
   });
   const handlechange = (e) => {
     const { name, value } = e.target;
@@ -14,21 +14,21 @@ export function ModalComponent({ closemodal }) {
   };
   const handlesubmit = (e) => {
     e.preventDefault();
-    const { username, email, phone, date } = data;
+    const { username, email, phone, dob } = data;
     if (!username) {
       alert("Please fill out name field");
       return;
     }
     if (!email) {
-      alert("Please fill out email field");
+      alert("Invalid email. Please check your email address.");
       return;
     }
     if (!phone) {
-      alert("Please fill out phone field");
+      alert("**Invalid phone number. Please enter a 10-digit phone number.");
       return;
     }
-    if (!date) {
-      alert("Please fill out date field");
+    if (!dob) {
+      alert("Invalid date of birth. Please enter a past date.");
       return;
     }
     if (!email.includes("@")) {
@@ -39,7 +39,7 @@ export function ModalComponent({ closemodal }) {
       alert("Invalid phone number. Please enter a valid phone number");
       return;
     }
-    if (new Date(date) > new Date()) {
+    if (new Date(dob) > new Date()) {
       alert("Invalid date of birth. Please enter a past date");
       return;
     }
@@ -88,9 +88,9 @@ export function ModalComponent({ closemodal }) {
             <br />
             <input
               type="datetime-local"
-              name="date"
-              id="date"
-              value={data.date}
+              name="dob"
+              id="dob"
+              value={data.dob}
               onChange={handlechange}
             />
           </div>
