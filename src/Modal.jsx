@@ -10,7 +10,7 @@ export function XModal() {
     setopenmodal(false);
   };
   return (
-    <div>
+    <div className="modal">
       <h1>User Details Modal</h1>
       <button onClick={handleclick}>Open Form</button>
       {openmodal ? <ModalComponent closemodal={closemodal} /> : null}

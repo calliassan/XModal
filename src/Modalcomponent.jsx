@@ -48,7 +48,7 @@ export function ModalComponent({ closemodal }) {
   };
 
   return (
-    <div>
+    <div className="modal-content">
       <form onSubmit={handlesubmit}>
         <h1>Fill Details</h1>
         <div>
